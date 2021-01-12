@@ -25,16 +25,16 @@ public class Brand {
         return id;
     }
 
-    public void setId(int id222) {
-        this.id = id222;
+    public void setId(int id) {
+        this.id = id;
     }
 
     public String getName() {
         return name;
     }
 
-    public void setName(String name222) {
-        this.name = name222;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean isStatus() {
