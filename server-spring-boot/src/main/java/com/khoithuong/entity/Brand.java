@@ -25,8 +25,8 @@ public class Brand {
         return id;
     }
 
-    public void setId(int id) {
-        this.id = id;
+    public void setId(int id222) {
+        this.id = id222;
     }
 
     public String getName() {
