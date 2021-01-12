@@ -33,8 +33,8 @@ public class Brand {
         return name;
     }
 
-    public void setName(String name222) {
-        this.name = name222;
+    public void setName(String name) {
+        this.name = name;
     }
 
     public boolean isStatus() {
