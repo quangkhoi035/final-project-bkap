@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ProductService } from '../../shared/services/product.service';
 import { Product } from 'src/app/modals/product.model';
+import {Title} from '@angular/platform-browser';
 
 @Component({
   selector: 'app-home',
@@ -17,11 +18,12 @@ export class HomeComponent implements OnInit {
 
   ];
 
-  constructor(private productService: ProductService) { }
+  constructor(private productService: ProductService,
+              private titleService: Title) { }
 
   ngOnInit() {
 
-
+    this.titleService.setTitle('Khoithuong Corp');
  this.productService.getProducts()
  .subscribe(
    (product: Product[]) => {

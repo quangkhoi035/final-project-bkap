@@ -18,12 +18,11 @@ import { HashLocationStrategy, LocationStrategy } from '@angular/common';
 import { ColorOptionsComponent } from './components/color-options/color-options.component';
 
 
-
 @NgModule({
   declarations: [
     AppComponent,
     MainComponent,
-    ColorOptionsComponent
+    ColorOptionsComponent,
   ],
   imports: [
     NgxSpinnerModule,
@@ -35,7 +34,7 @@ import { ColorOptionsComponent } from './components/color-options/color-options.
     FormsModule,
     ReactiveFormsModule,
     AppRoutingModule,
-    NgxImgZoomModule
+    NgxImgZoomModule,
 
   ],
   providers: [{provide: LocationStrategy, useClass: HashLocationStrategy}],

@@ -6,6 +6,9 @@ import { ProductDialogComponent } from './product-dialog/product-dialog.componen
 import { Router } from '@angular/router';
 import { WishlistService } from '../../shared/services/wishlist.service';
 import { trigger, state, style, transition, animate, keyframes } from '@angular/animations';
+import {CategoryService} from '../../shared/services/category.service';
+import {Observable} from 'rxjs';
+import {Category} from '../../../modals/category';
 
 @Component({
   selector: 'app-products',
@@ -26,15 +29,19 @@ export class ProductsComponent implements OnChanges {
   @Input('product') product: Array<Product> = [];
 
   defaultFruits: Product[];
+  categories : Observable<Category[]>;
 
   @Input() products: Product[];
 
-  constructor(private wishlistService: WishlistService, private cartService: CartService, private dialog: MatDialog, private router: Router) { }
+  constructor(private categoryService: CategoryService, private wishlistService: WishlistService, private cartService: CartService, private dialog: MatDialog, private router: Router) { }
 
   ngOnChanges(changes: SimpleChanges): void {
     if (changes.products && changes.products.currentValue && changes.products.currentValue.length) {
       this.defaultFruits = this.products;
     }
+  }
+  ngOnInit() {
+    this.categories = this.categoryService.getCategoriesList();
   }
     // Add to cart
     public addToCart(product: Product,  quantity: number = 1) {

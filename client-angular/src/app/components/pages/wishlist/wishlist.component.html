@@ -31,7 +31,7 @@
             <div class="mat-header-cell">Price</div>
             <div class="mat-header-cell text-center">
               <div class="px-1">
-                <button mat-raised-button color="warn" >Clear All</button>
+                <button mat-raised-button (click)="clearWishlist()" color="warn" >Clear All</button>
               </div>
             </div>
           </div>
@@ -48,12 +48,12 @@
 
           </div>
           <div class="mat-row">
-            <div class="mat-cell"><a [routerLink]="['/home/one']"  mat-raised-button  class="btn-project">Continue shopping</a></div>
+            <div class="mat-cell"><a [routerLink]="['/home/one']"  mat-raised-button color="primary" class="btn-project">Tiếp tục mua sắm</a></div>
             <div class="mat-cell"></div>
             <div class="mat-cell"></div>
 
 
-            <div class="mat-cell text-center"><a mat-raised-button  class="btn-project">Proceed To Checkout</a></div>
+            <div class="mat-cell text-center"><a mat-raised-button color="primary"  (click)="saveAllToCart()" class="btn-project">Thêm vào giỏ hàng</a></div>
           </div>
         </div>
 

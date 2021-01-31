@@ -3,7 +3,6 @@
 export class Category {
   id: number;
   name: string;
-  subCategory : Category[];
-  parentCategory : Category[];
+  pictures: string;
   active: boolean;
 }

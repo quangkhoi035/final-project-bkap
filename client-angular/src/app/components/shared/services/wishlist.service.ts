@@ -59,4 +59,9 @@ export class WishlistService {
     products.splice(index, 1);
     localStorage.setItem("wishlistItem", JSON.stringify(products));
   }
+
+  public removeAllWishlist(products: Product[]) {
+    products.splice(0, 100);
+    localStorage.setItem("wishlistItem", JSON.stringify(products));
+  }
 }
