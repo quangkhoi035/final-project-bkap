@@ -23,6 +23,7 @@ public class Product {
     private boolean newPro;
     private boolean sale;
     private String state;
+
     @ManyToOne
     @JoinColumn(name = "category_id", referencedColumnName = "id")
     private Category category;

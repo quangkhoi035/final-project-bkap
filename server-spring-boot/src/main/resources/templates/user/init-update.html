@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="x-ua-compatible" content="ie=edge">
+    <title>Update User</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.4.1/css/all.css">
+</head>
+
+<body>
+<div class="container my-5">
+    <h3> Update User</h3>
+    <div class="card">
+        <div class="card-body">
+            <div class="col-md-10">
+                <form th:action="@{/user/update-user}" th:object="${updateUser}"
+                      method="post">
+                    <div class="row">
+                        <input type="hidden" th:field="*{id}">
+                        <input type="hidden" th:field="*{password}">
+                        <div class="form-group col-md-8">
+                            <label for="Email" class="col-form-label">Email</label>
+                            <input type="text" th:field="*{email}" class="form-control"/>
+                        </div>
+
+                        <div class="form-group col-md-8">
+                            <th:block th:each="role : ${listRole}">
+                                <input type="checkbox" name="listRoleResult" th:value="${role.getId()}"/>
+                                <label th:text="${role.getName()}" ></label>
+                            </th:block>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="submit" class="btn btn-primary" value=" Update ">
+                        </div>
+
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+
+</html>
